@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: TestAPIs
+  version: 1.0.0
+servers:
+  - url: https://restcountries.com
+paths:
+  /v3.1/alpha/US:
+    get:
+      tags:
+        - default
+      summary: GetCountryInformationByCode
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
