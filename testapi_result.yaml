@@ -30,7 +30,7 @@ components:
       x-flow-type:
           name: catfact
       x-flow-query:
-          path: /info.0.json
+          path: /fact
           operation: get    
       properties:
         fact:
