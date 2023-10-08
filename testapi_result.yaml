@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: TestAPIs
+  title: GetFacts
   version: 1.0.0
 servers:
   - url: https://catfact.ninja
@@ -26,12 +26,15 @@ paths:
           description: OK
 components:
   schemas:
-    catfact:
+    CatFacts:
       x-flow-type:
-          name: catfact
+		  description: Get cat facts	
+          name: CatFacts
       x-flow-query:
-          path: /fact
-          operation: get    
+        path: /fact
+        operation: get
+	     title: GetCatFact
+       type: object
       properties:
         fact:
           type: string
