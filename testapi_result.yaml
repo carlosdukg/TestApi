@@ -36,7 +36,7 @@ components:
 	     title: GetCatFact
        type: object
       properties:
-        fact:
+        Fact:
           type: string
-        length:
+        Length:
           type: integer
