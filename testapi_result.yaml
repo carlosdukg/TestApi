@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: GetFacts
+  title: GetFact
   version: 1.0.0
 servers:
   - url: https://catfact.ninja
@@ -22,20 +22,18 @@ paths:
           content:
            application/json:
               schema:
-                $ref: "#/components/schemas/catfact"
+                $ref: "#/components/schemas/CatFact"
 components:
   schemas:
-    CatFacts:
+    CatFact:
       x-flow-type:
-		  description: Get cat facts	
-          name: CatFacts
+        name: GetFact
       x-flow-query:
         path: /fact
         operation: get
-	     title: GetCatFact
-       type: object
+      type: object
       properties:
-        Fact:
-          type: string
-        Length:
+        length:
           type: integer
+        fact:
+          type: string
