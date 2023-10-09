@@ -1,0 +1,257 @@
+openapi: 3.0.0
+info:
+  title: GetEmployeeByID
+  version: 1.0.0
+servers:
+  - url: https://servicet.ultipro.com
+paths:
+  /personnel/v1/contacts:
+    get:
+      tags:
+        - default
+      summary: Get employee by ID
+      parameters:
+        - in: query
+          name: employeeId
+          schema:
+            type: string
+          description: The employee id number
+        - in: header
+          name: US-CUSTOMER-API-KEY
+          schema:
+            type: string
+            default: "FW1MQ"
+          required: true
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            default: "Basic Q2FybG9zREFwcFRlc3Rpbmc6PSopWDl3OVp4LU9wdz11"
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+           application/json:
+              schema:
+                $ref: "#/components/schemas/Employee"
+components:
+  schemas:
+    Employee:
+      x-flow-type:
+        name: GetEmployeeByID
+      x-flow-query:
+        path: /personnel/v1/contacts
+        operation: get
+      type: object
+      "properties": {
+			"city": {
+				"type": "string"
+			},
+			"countryCode": {
+				"type": "string"
+			},
+			"county": {
+				"type": "string"
+			},
+			"addressIsDifferentFromEmployee": {
+				"type": "boolean"
+			},
+			"addressLine1": {
+				"type": "string"
+			},
+			"addressLine2": {
+				"type": "string"
+			},
+			"state": {
+				"type": "string"
+			},
+			"zipCode": {
+				"type": "string"
+			},
+			"cobraExport": {
+				"type": "boolean"
+			},
+			"cobraIsActive": {
+				"type": "boolean"
+			},
+			"cobraReason": {
+				"type": "string"
+			},
+			"cobraStatus": {
+				"type": "string"
+			},
+			"cobraStatusDate": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"dateOfBirth": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"dateOfCOBRAEvent": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"dateOfCOBRALetter": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"employeeId": {
+				"type": "string"
+			},
+			"gender": {
+				"type": "string"
+			},
+			"importId": {
+				"type": "string"
+			},
+			"isBeneficiary": {
+				"type": "boolean"
+			},
+			"isDependent": {
+				"type": "boolean"
+			},
+			"isDisabled": {
+				"type": "boolean"
+			},
+			"isEmergencyContact": {
+				"type": "boolean"
+			},
+			"isSmoker": {
+				"type": "boolean"
+			},
+			"isStudent": {
+				"type": "boolean"
+			},
+			"marriageDate": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"firstName": {
+				"type": "string"
+			},
+			"formerName": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"lastName": {
+				"type": "string"
+			},
+			"middleName": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"nameSuffix": {
+				"type": "string"
+			},
+			"occupation": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"otherInsurance": {
+				"type": "string"
+			},
+			"homePhoneCountry": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"homePhoneNumber": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"otherPhoneNumber": {
+				"type": "string"
+			},
+			"otherPhoneType": {
+				"type": "string"
+			},
+			"preferredPhoneNumber": {
+				"type": "string"
+			},
+			"relationshipCode": {
+				"type": "string"
+			},
+			"relationshipDescription": {
+				"type": "string"
+			},
+			"ssn": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"contactId": {
+				"type": "string"
+			},
+			"userDefinedField01": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"workPhoneExtension": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"workPhoneNumber": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"cobraNotes": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"notes": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"isActive": {
+				"type": "boolean"
+			},
+			"statusAsOfDate": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"rowLastChanged": {
+				"type": "string"
+			},
+			"deathDate": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"divorceDate": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"emailAddress": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"otherPhoneCountryCode": {
+				"type": "string"
+			},
+			"healthCareId": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"nationalId": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"nationalIdExpirationDate": {
+				"type": "string",
+				"format": "nullable"
+			},
+			"personID": {
+				"type": "string"
+			},
+			"addressID": {
+				"type": "string"
+			},
+			"workPhoneId": {
+				"type": "string"
+			},
+			"homePhoneId": {
+				"type": "string"
+			},
+			"otherPhoneId": {
+				"type": "string"
+			}
+		}
