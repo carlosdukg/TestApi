@@ -39,7 +39,7 @@ components:
   schemas:
     Employee:
       x-flow-type:
-        name: GetEmployeeByID
+        name: GetEmpByID
       x-flow-query:
         path: /personnel/v1/contacts
         operation: get
