@@ -7,6 +7,8 @@ servers:
 paths:
   /personnel/v1/contacts:
     get:
+      security:
+        - basicAuth: []
       tags:
         - default
       summary: Get employee by ID
@@ -20,13 +22,6 @@ paths:
           name: US-CUSTOMER-API-KEY
           schema:
             type: string
-            default: "FW1MQ"
-          required: true
-        - in: header
-          name: Authorization
-          schema:
-            type: string
-            default: "Basic Q2FybG9zREFwcFRlc3Rpbmc6PSopWDl3OVp4LU9wdz11"
           required: true
       responses:
         '200':
@@ -36,6 +31,10 @@ paths:
               schema:
                 $ref: "#/components/schemas/Employee"
 components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
   schemas:
     Employee:
       x-flow-type:
